@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dragonfly.skylightparameter &#8212; dragonfly-core  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          dragonfly-core</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../cli/index.html">CLI Docs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cli/index.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cli/index.html#commands">Commands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../cli/translate.html">translate</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../cli/translate.html#dragonfly-translate">dragonfly translate</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../cli/translate.html#dragonfly-translate-merge-models-to-honeybee">merge-models-to-honeybee</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../cli/translate.html#dragonfly-translate-model-from-geojson">model-from-geojson</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../cli/translate.html#dragonfly-translate-model-to-honeybee">model-to-honeybee</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../cli/translate.html#dragonfly-translate-model-to-honeybee-file">model-to-honeybee-file</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../cli/edit.html">edit</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../cli/edit.html#dragonfly-edit">dragonfly edit</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../cli/edit.html#dragonfly-edit-align">align</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../cli/edit.html#dragonfly-edit-convert-units">convert-units</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../cli/edit.html#dragonfly-edit-remove-short-segments">remove-short-segments</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../cli/edit.html#dragonfly-edit-reset-room-boundaries">reset-room-boundaries</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../cli/edit.html#dragonfly-edit-solve-adjacency">solve-adjacency</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../cli/edit.html#dragonfly-edit-windows-by-ratio">windows-by-ratio</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../cli/create.html">create</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../cli/create.html#dragonfly-create">dragonfly create</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../cli/create.html#dragonfly-create-merge-models">merge-models</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../cli/validate.html">validate</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../cli/validate.html#dragonfly-validate">dragonfly validate</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../cli/validate.html#dragonfly-validate-model">model</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">dragonfly</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../dragonfly.html">dragonfly package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../dragonfly.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../dragonfly.cli.html">dragonfly.cli package</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../dragonfly.cli.html#submodules">Submodules</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../dragonfly.cli.create.html">dragonfly.cli.create module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../dragonfly.cli.edit.html">dragonfly.cli.edit module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../dragonfly.cli.translate.html">dragonfly.cli.translate module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../dragonfly.cli.validate.html">dragonfly.cli.validate module</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../dragonfly.cli.html#module-dragonfly.cli">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../dragonfly.writer.html">dragonfly.writer package</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../dragonfly.writer.html#submodules">Submodules</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../dragonfly.writer.building.html">dragonfly.writer.building module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../dragonfly.writer.context.html">dragonfly.writer.context module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../dragonfly.writer.model.html">dragonfly.writer.model module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../dragonfly.writer.room2d.html">dragonfly.writer.room2d module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../dragonfly.writer.story.html">dragonfly.writer.story module</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../dragonfly.writer.html#module-dragonfly.writer">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../dragonfly.html#submodules">Submodules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../dragonfly.building.html">dragonfly.building module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dragonfly.colorobj.html">dragonfly.colorobj module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dragonfly.config.html">dragonfly.config module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dragonfly.context.html">dragonfly.context module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dragonfly.dictutil.html">dragonfly.dictutil module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dragonfly.extensionutil.html">dragonfly.extensionutil module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dragonfly.model.html">dragonfly.model module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dragonfly.projection.html">dragonfly.projection module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dragonfly.properties.html">dragonfly.properties module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dragonfly.roof.html">dragonfly.roof module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dragonfly.room2d.html">dragonfly.room2d module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dragonfly.shadingparameter.html">dragonfly.shadingparameter module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dragonfly.skylightparameter.html">dragonfly.skylightparameter module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dragonfly.story.html">dragonfly.story module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dragonfly.subdivide.html">dragonfly.subdivide module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dragonfly.windowparameter.html">dragonfly.windowparameter module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../dragonfly.html#module-dragonfly">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../cli/index.html">CLI Docs</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">dragonfly</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+              <li class="hidden-sm"></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-4">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../cli/index.html">CLI Docs</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">dragonfly</a></li>
+</ul>
+
+        </div>
+      </div>
+    <div class="body col-md-8 content" role="main">
+      
+  <h1>Source code for dragonfly.skylightparameter</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+<span class="sd">&quot;&quot;&quot;Skylight Parameters with instructions for generating skylights.&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span>
+<span class="kn">import</span> <span class="nn">math</span>
+
+<span class="kn">from</span> <span class="nn">honeybee.typing</span> <span class="kn">import</span> <span class="n">float_in_range</span><span class="p">,</span> <span class="n">float_positive</span>
+<span class="kn">from</span> <span class="nn">honeybee.altnumber</span> <span class="kn">import</span> <span class="n">autocalculate</span>
+<span class="kn">from</span> <span class="nn">honeybee.aperture</span> <span class="kn">import</span> <span class="n">Aperture</span>
+<span class="kn">from</span> <span class="nn">honeybee.door</span> <span class="kn">import</span> <span class="n">Door</span>
+
+<span class="kn">from</span> <span class="nn">ladybug_geometry.geometry2d.pointvector</span> <span class="kn">import</span> <span class="n">Point2D</span><span class="p">,</span> <span class="n">Vector2D</span>
+<span class="kn">from</span> <span class="nn">ladybug_geometry.geometry2d.polygon</span> <span class="kn">import</span> <span class="n">Polygon2D</span>
+<span class="kn">from</span> <span class="nn">ladybug_geometry.geometry3d.pointvector</span> <span class="kn">import</span> <span class="n">Vector3D</span><span class="p">,</span> <span class="n">Point3D</span>
+<span class="kn">from</span> <span class="nn">ladybug_geometry.geometry3d.face</span> <span class="kn">import</span> <span class="n">Face3D</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">version_info</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">)):</span>  <span class="c1"># python 2</span>
+    <span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">izip</span> <span class="k">as</span> <span class="nb">zip</span>  <span class="c1"># python 2</span>
+
+
+<span class="k">class</span> <span class="nc">_SkylightParameterBase</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Base object for all Skylight parameters.</span>
+
+<span class="sd">    This object records the minimum number of the methods that must be overwritten</span>
+<span class="sd">    on a skylight parameter object for it to be successfully be applied in</span>
+<span class="sd">    dragonfly workflows.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">area_from_face</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">face</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the skylight area generated by these parameters from a Room2D Face3D.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="mi">0</span>
+
+    <span class="k">def</span> <span class="nf">add_skylight_to_face</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">face</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="mf">0.01</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add Apertures to a Honeybee Roof Face using these Skylight Parameters.&quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">scale</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">factor</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a scaled version of these SkylightParameters.</span>
+
+<span class="sd">        This method is called within the scale methods of the Room2D.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            factor: A number representing how much the object should be scaled.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_dict</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create SkylightParameterBase from a dictionary.</span>
+
+<span class="sd">        .. code-block:: python</span>
+
+<span class="sd">            {</span>
+<span class="sd">            &quot;type&quot;: &quot;SkylightParameterBase&quot;</span>
+<span class="sd">            }</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">assert</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;SkylightParameterBase&#39;</span><span class="p">,</span> \
+            <span class="s1">&#39;Expected SkylightParameterBase dictionary. Got </span><span class="si">{}</span><span class="s1">.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">])</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get SkylightParameterBase as a dictionary.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;SkylightParameterBase&#39;</span><span class="p">}</span>
+
+    <span class="k">def</span> <span class="nf">duplicate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a copy of this object.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__copy__</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">ToString</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">__copy__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">_SkylightParameterBase</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;SkylightParameterBase&#39;</span>
+
+
+<div class="viewcode-block" id="GriddedSkylightArea"><a class="viewcode-back" href="../../dragonfly.skylightparameter.html#dragonfly.skylightparameter.GriddedSkylightArea">[docs]</a><span class="k">class</span> <span class="nc">GriddedSkylightArea</span><span class="p">(</span><span class="n">_SkylightParameterBase</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Instructions for gridded skylights defined by an absolute area.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        skylight_area: A number for the skylight area in current model units.</span>
+<span class="sd">            If this area is larger than the area of the roof that it is applied</span>
+<span class="sd">            to, the skylight will fill the parent roof at a 99% ratio.</span>
+<span class="sd">        spacing: A number for the spacing between the centers of each grid cell.</span>
+<span class="sd">            This should be less than a third of the dimension of the Roof geometry</span>
+<span class="sd">            if multiple, evenly-spaced skylights are desired. If None or Autocalculate,</span>
+<span class="sd">            a spacing of one third the smaller dimension of the parent Roof will</span>
+<span class="sd">            be automatically assumed. (Default: Autocalculate).</span>
+
+<span class="sd">    Properties:</span>
+<span class="sd">        * skylight_area</span>
+<span class="sd">        * spacing</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_skylight_area&#39;</span><span class="p">,</span> <span class="s1">&#39;_spacing&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">skylight_area</span><span class="p">,</span> <span class="n">spacing</span><span class="o">=</span><span class="n">autocalculate</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize GriddedSkylightArea.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_skylight_area</span> <span class="o">=</span> <span class="n">float_positive</span><span class="p">(</span><span class="n">skylight_area</span><span class="p">,</span> <span class="s1">&#39;skylight area&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">spacing</span> <span class="o">==</span> <span class="n">autocalculate</span><span class="p">:</span>
+            <span class="n">spacing</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">elif</span> <span class="n">spacing</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">spacing</span> <span class="o">=</span> <span class="n">float_positive</span><span class="p">(</span><span class="n">spacing</span><span class="p">,</span> <span class="s1">&#39;skylight spacing&#39;</span><span class="p">)</span>
+            <span class="k">assert</span> <span class="n">spacing</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;GriddedSkylightArea spacing must be greater than zero.&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_spacing</span> <span class="o">=</span> <span class="n">spacing</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">skylight_area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a number for the skylight area in current model units.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_skylight_area</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">spacing</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a number or the spacing between the skylights.</span>
+
+<span class="sd">        None indicates that the spacing will always be one third of the smaller</span>
+<span class="sd">        dimension of the parent Roof.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_spacing</span>
+
+<div class="viewcode-block" id="GriddedSkylightArea.area_from_face"><a class="viewcode-back" href="../../dragonfly.skylightparameter.html#dragonfly.skylightparameter.GriddedSkylightArea.area_from_face">[docs]</a>    <span class="k">def</span> <span class="nf">area_from_face</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">face</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the skylight area generated by these parameters from a Room2D Face3D.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            face: A Roof Face3D to which these parameters are applied.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_skylight_area</span></div>
+
+<div class="viewcode-block" id="GriddedSkylightArea.add_skylight_to_face"><a class="viewcode-back" href="../../dragonfly.skylightparameter.html#dragonfly.skylightparameter.GriddedSkylightArea.add_skylight_to_face">[docs]</a>    <span class="k">def</span> <span class="nf">add_skylight_to_face</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">face</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="mf">0.01</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add Apertures to a Honeybee Roof Face using these Skylight Parameters.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            face: A honeybee-core Face object.</span>
+<span class="sd">            tolerance: The maximum difference between point values for them to be</span>
+<span class="sd">                considered distinct. (Default: 0.01, suitable for objects in meters).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_skylight_area</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="n">spacing</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">spacing</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">spacing</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">min_pt</span><span class="p">,</span> <span class="n">max_pt</span> <span class="o">=</span> <span class="n">face</span><span class="o">.</span><span class="n">min</span><span class="p">,</span> <span class="n">face</span><span class="o">.</span><span class="n">max</span>
+            <span class="n">min_dim</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">max_pt</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">min_pt</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">max_pt</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">min_pt</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+            <span class="n">spacing</span> <span class="o">=</span> <span class="p">(</span><span class="n">min_dim</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="n">tolerance</span>
+        <span class="n">skylight_ratio</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">skylight_area</span> <span class="o">/</span> <span class="n">face</span><span class="o">.</span><span class="n">area</span>
+        <span class="n">skylight_ratio</span> <span class="o">=</span> <span class="mf">0.99</span> <span class="k">if</span> <span class="n">skylight_ratio</span> <span class="o">&gt;</span> <span class="mf">0.99</span> <span class="k">else</span> <span class="n">skylight_ratio</span>
+        <span class="n">face</span><span class="o">.</span><span class="n">apertures_by_ratio_gridded</span><span class="p">(</span>
+            <span class="n">skylight_ratio</span><span class="p">,</span> <span class="n">spacing</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="n">tolerance</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GriddedSkylightArea.scale"><a class="viewcode-back" href="../../dragonfly.skylightparameter.html#dragonfly.skylightparameter.GriddedSkylightArea.scale">[docs]</a>    <span class="k">def</span> <span class="nf">scale</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">factor</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a scaled version of these SkylightParameters.</span>
+
+<span class="sd">        This method is called within the scale methods of the Room2D.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            factor: A number representing how much the object should be scaled.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">spc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">spacing</span> <span class="o">*</span> <span class="n">factor</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">spacing</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="n">GriddedSkylightArea</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">skylight_area</span> <span class="o">*</span> <span class="n">factor</span><span class="p">,</span> <span class="n">spc</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GriddedSkylightArea.from_dict"><a class="viewcode-back" href="../../dragonfly.skylightparameter.html#dragonfly.skylightparameter.GriddedSkylightArea.from_dict">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_dict</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create GriddedSkylightArea from a dictionary.</span>
+
+<span class="sd">        .. code-block:: python</span>
+
+<span class="sd">            {</span>
+<span class="sd">            &quot;type&quot;: &quot;GriddedSkylightArea&quot;,</span>
+<span class="sd">            &quot;skylight_area&quot;: 2.5,</span>
+<span class="sd">            &quot;spacing&quot;: 2</span>
+<span class="sd">            }</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">assert</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;GriddedSkylightArea&#39;</span><span class="p">,</span> \
+            <span class="s1">&#39;Expected GriddedSkylightArea dictionary. Got </span><span class="si">{}</span><span class="s1">.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">])</span>
+        <span class="n">spc</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;spacing&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="s1">&#39;spacing&#39;</span> <span class="ow">in</span> <span class="n">data</span> <span class="ow">and</span> \
+            <span class="n">data</span><span class="p">[</span><span class="s1">&#39;spacing&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">autocalculate</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;skylight_area&#39;</span><span class="p">],</span> <span class="n">spc</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GriddedSkylightArea.to_dict"><a class="viewcode-back" href="../../dragonfly.skylightparameter.html#dragonfly.skylightparameter.GriddedSkylightArea.to_dict">[docs]</a>    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get GriddedSkylightArea as a dictionary.&quot;&quot;&quot;</span>
+        <span class="n">base</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;GriddedSkylightArea&#39;</span><span class="p">,</span> <span class="s1">&#39;skylight_area&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">skylight_area</span><span class="p">}</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">spacing</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">base</span><span class="p">[</span><span class="s1">&#39;spacing&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">spacing</span>
+        <span class="k">return</span> <span class="n">base</span></div>
+
+    <span class="k">def</span> <span class="nf">__copy__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">GriddedSkylightArea</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">skylight_area</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">spacing</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;A tuple based on the object properties, useful for hashing.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">skylight_area</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">spacing</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">hash</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__key</span><span class="p">())</span>
+
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">GriddedSkylightArea</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">__key</span><span class="p">()</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">__key</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="fm">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__eq__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;GriddedSkylightArea: [area: </span><span class="si">{}</span><span class="s1">]&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">skylight_area</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="GriddedSkylightRatio"><a class="viewcode-back" href="../../dragonfly.skylightparameter.html#dragonfly.skylightparameter.GriddedSkylightRatio">[docs]</a><span class="k">class</span> <span class="nc">GriddedSkylightRatio</span><span class="p">(</span><span class="n">_SkylightParameterBase</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Instructions for gridded skylights derived from an area ratio with the roof.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        skylight_ratio: A number between 0 and 1 for the ratio between the skylight</span>
+<span class="sd">            area and the total Roof face area.</span>
+<span class="sd">        spacing: A number for the spacing between the centers of each grid cell.</span>
+<span class="sd">            This should be less than a third of the dimension of the Roof geometry</span>
+<span class="sd">            if multiple, evenly-spaced skylights are desired. If None or Autocalculate,</span>
+<span class="sd">            a spacing of one third the smaller dimension of the parent Roof will</span>
+<span class="sd">            be automatically assumed. (Default: Autocalculate).</span>
+
+<span class="sd">    Properties:</span>
+<span class="sd">        * skylight_ratio</span>
+<span class="sd">        * spacing</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_skylight_ratio&#39;</span><span class="p">,</span> <span class="s1">&#39;_spacing&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">skylight_ratio</span><span class="p">,</span> <span class="n">spacing</span><span class="o">=</span><span class="n">autocalculate</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize GriddedSkylightRatio.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_skylight_ratio</span> <span class="o">=</span> <span class="n">float_in_range</span><span class="p">(</span><span class="n">skylight_ratio</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s1">&#39;skylight ratio&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">spacing</span> <span class="o">==</span> <span class="n">autocalculate</span><span class="p">:</span>
+            <span class="n">spacing</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">elif</span> <span class="n">spacing</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">spacing</span> <span class="o">=</span> <span class="n">float_positive</span><span class="p">(</span><span class="n">spacing</span><span class="p">,</span> <span class="s1">&#39;skylight spacing&#39;</span><span class="p">)</span>
+            <span class="k">assert</span> <span class="n">spacing</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;GriddedSkylightRatio spacing must be greater than zero.&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_spacing</span> <span class="o">=</span> <span class="n">spacing</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">skylight_ratio</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a number between 0 and 1 for the skylight ratio.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_skylight_ratio</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">spacing</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a number or the spacing between the skylights.</span>
+
+<span class="sd">        None indicates that the spacing will always be one third of the smaller</span>
+<span class="sd">        dimension of the parent Roof.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_spacing</span>
+
+<div class="viewcode-block" id="GriddedSkylightRatio.area_from_face"><a class="viewcode-back" href="../../dragonfly.skylightparameter.html#dragonfly.skylightparameter.GriddedSkylightRatio.area_from_face">[docs]</a>    <span class="k">def</span> <span class="nf">area_from_face</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">face</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the skylight area generated by these parameters from a Room2D Face3D.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            face: A Roof Face3D to which these parameters are applied.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">face</span><span class="o">.</span><span class="n">area</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_skylight_ratio</span></div>
+
+<div class="viewcode-block" id="GriddedSkylightRatio.add_skylight_to_face"><a class="viewcode-back" href="../../dragonfly.skylightparameter.html#dragonfly.skylightparameter.GriddedSkylightRatio.add_skylight_to_face">[docs]</a>    <span class="k">def</span> <span class="nf">add_skylight_to_face</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">face</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="mf">0.01</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add Apertures to a Honeybee Roof Face using these Skylight Parameters.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            face: A honeybee-core Face object.</span>
+<span class="sd">            tolerance: The maximum difference between point values for them to be</span>
+<span class="sd">                considered distinct. (Default: 0.01, suitable for objects in meters).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_skylight_ratio</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="n">spacing</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">spacing</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">spacing</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">min_pt</span><span class="p">,</span> <span class="n">max_pt</span> <span class="o">=</span> <span class="n">face</span><span class="o">.</span><span class="n">min</span><span class="p">,</span> <span class="n">face</span><span class="o">.</span><span class="n">max</span>
+            <span class="n">min_dim</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">max_pt</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">min_pt</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">max_pt</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">min_pt</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+            <span class="n">spacing</span> <span class="o">=</span> <span class="p">(</span><span class="n">min_dim</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="n">tolerance</span>
+        <span class="n">face</span><span class="o">.</span><span class="n">apertures_by_ratio_gridded</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">skylight_ratio</span><span class="p">,</span> <span class="n">spacing</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="n">tolerance</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GriddedSkylightRatio.scale"><a class="viewcode-back" href="../../dragonfly.skylightparameter.html#dragonfly.skylightparameter.GriddedSkylightRatio.scale">[docs]</a>    <span class="k">def</span> <span class="nf">scale</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">factor</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a scaled version of these SkylightParameters.</span>
+
+<span class="sd">        This method is called within the scale methods of the Room2D.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            factor: A number representing how much the object should be scaled.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">spc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">spacing</span> <span class="o">*</span> <span class="n">factor</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">spacing</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="n">GriddedSkylightRatio</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">skylight_ratio</span><span class="p">,</span> <span class="n">spc</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GriddedSkylightRatio.from_dict"><a class="viewcode-back" href="../../dragonfly.skylightparameter.html#dragonfly.skylightparameter.GriddedSkylightRatio.from_dict">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_dict</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create GriddedSkylightRatio from a dictionary.</span>
+
+<span class="sd">        .. code-block:: python</span>
+
+<span class="sd">            {</span>
+<span class="sd">            &quot;type&quot;: &quot;GriddedSkylightRatio&quot;,</span>
+<span class="sd">            &quot;skylight_ratio&quot;: 0.05,</span>
+<span class="sd">            &quot;spacing&quot;: 2</span>
+<span class="sd">            }</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">assert</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;GriddedSkylightRatio&#39;</span><span class="p">,</span> \
+            <span class="s1">&#39;Expected GriddedSkylightRatio dictionary. Got </span><span class="si">{}</span><span class="s1">.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">])</span>
+        <span class="n">spc</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;spacing&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="s1">&#39;spacing&#39;</span> <span class="ow">in</span> <span class="n">data</span> <span class="ow">and</span> \
+            <span class="n">data</span><span class="p">[</span><span class="s1">&#39;spacing&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">autocalculate</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;skylight_ratio&#39;</span><span class="p">],</span> <span class="n">spc</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GriddedSkylightRatio.to_dict"><a class="viewcode-back" href="../../dragonfly.skylightparameter.html#dragonfly.skylightparameter.GriddedSkylightRatio.to_dict">[docs]</a>    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get GriddedSkylightRatio as a dictionary.&quot;&quot;&quot;</span>
+        <span class="n">base</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;GriddedSkylightRatio&#39;</span><span class="p">,</span> <span class="s1">&#39;skylight_ratio&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">skylight_ratio</span><span class="p">}</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">spacing</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">base</span><span class="p">[</span><span class="s1">&#39;spacing&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">spacing</span>
+        <span class="k">return</span> <span class="n">base</span></div>
+
+    <span class="k">def</span> <span class="nf">__copy__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">GriddedSkylightRatio</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">skylight_ratio</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">spacing</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;A tuple based on the object properties, useful for hashing.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">skylight_ratio</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">spacing</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">hash</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__key</span><span class="p">())</span>
+
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">GriddedSkylightRatio</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">__key</span><span class="p">()</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">__key</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="fm">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__eq__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;GriddedSkylightRatio: [ratio: </span><span class="si">{}</span><span class="s1">]&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">skylight_ratio</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="DetailedSkylights"><a class="viewcode-back" href="../../dragonfly.skylightparameter.html#dragonfly.skylightparameter.DetailedSkylights">[docs]</a><span class="k">class</span> <span class="nc">DetailedSkylights</span><span class="p">(</span><span class="n">_SkylightParameterBase</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Instructions for detailed skylights, defined by 2D Polygons (lists of 2D vertices).</span>
+
+<span class="sd">    Note that these parameters are intended to represent skylights that are specific</span>
+<span class="sd">    to a particular Room2D and, unlike the other SkylightsParameters, this class</span>
+<span class="sd">    performs no automatic checks to ensure that the skylights lie within the</span>
+<span class="sd">    boundary of the Roof that they are assigned to.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        polygons: An array of ladybug_geometry Polygon2D objects in world XY</span>
+<span class="sd">            coordinates with one polygon for each skylight. These coordinate</span>
+<span class="sd">            values should lie within the Room2D&#39;s Polygon2D.</span>
+<span class="sd">        are_doors: An array of booleans that align with the polygons and note whether</span>
+<span class="sd">            each of the polygons represents an overhead door (True) or a skylight</span>
+<span class="sd">            (False). If None, it will be assumed that all polygons represent skylights</span>
+<span class="sd">            and they will be translated to Apertures in any resulting Honeybee</span>
+<span class="sd">            model. (Default: None).</span>
+
+<span class="sd">    Properties:</span>
+<span class="sd">        * polygons</span>
+<span class="sd">        * are_doors</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_polygons&#39;</span><span class="p">,</span> <span class="s1">&#39;_are_doors&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">polygons</span><span class="p">,</span> <span class="n">are_doors</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize DetailedSkylights.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">polygons</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+            <span class="n">polygons</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">polygons</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">polygon</span> <span class="ow">in</span> <span class="n">polygons</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">polygon</span><span class="p">,</span> <span class="n">Polygon2D</span><span class="p">),</span> \
+                <span class="s1">&#39;Expected Polygon2D for skylight polygon. Got </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">polygon</span><span class="p">))</span>
+        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">polygons</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">,</span> \
+            <span class="s1">&#39;There must be at least one polygon to use DetailedSkylights.&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_polygons</span> <span class="o">=</span> <span class="n">polygons</span>
+        <span class="k">if</span> <span class="n">are_doors</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_are_doors</span> <span class="o">=</span> <span class="p">(</span><span class="kc">False</span><span class="p">,)</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">polygons</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">are_doors</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+                <span class="n">are_doors</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">are_doors</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">is_dr</span> <span class="ow">in</span> <span class="n">are_doors</span><span class="p">:</span>
+                <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">is_dr</span><span class="p">,</span> <span class="nb">bool</span><span class="p">),</span> <span class="s1">&#39;Expected booleans for &#39;</span> \
+                    <span class="s1">&#39;DetailedSkylights.are_doors. Got </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">is_dr</span><span class="p">))</span>
+            <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">are_doors</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">polygons</span><span class="p">),</span> \
+                <span class="s1">&#39;Length of DetailedSkylights.are_doors (</span><span class="si">{}</span><span class="s1">) does not match the length &#39;</span> \
+                <span class="s1">&#39;of DetailedSkylights.polygons (</span><span class="si">{}</span><span class="s1">).&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="nb">len</span><span class="p">(</span><span class="n">are_doors</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">polygons</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_are_doors</span> <span class="o">=</span> <span class="n">are_doors</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">polygons</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get an array of Polygon2Ds with one polygon for each skylight.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_polygons</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">are_doors</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get an array of booleans that note whether each polygon is a door.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_are_doors</span>
+
+<div class="viewcode-block" id="DetailedSkylights.area_from_face"><a class="viewcode-back" href="../../dragonfly.skylightparameter.html#dragonfly.skylightparameter.DetailedSkylights.area_from_face">[docs]</a>    <span class="k">def</span> <span class="nf">area_from_face</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">face</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the skylight area generated by these parameters from a Room2D Face3D.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            face: A Roof Face3D to which these parameters are applied.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">polygon</span><span class="o">.</span><span class="n">area</span> <span class="k">for</span> <span class="n">polygon</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_polygons</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="DetailedSkylights.check_valid_for_face"><a class="viewcode-back" href="../../dragonfly.skylightparameter.html#dragonfly.skylightparameter.DetailedSkylights.check_valid_for_face">[docs]</a>    <span class="k">def</span> <span class="nf">check_valid_for_face</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">face</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check that these skylight parameters are valid for a given Face3D.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            face: A Roof Face3D to which these parameters are applied.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            A string with the message. Will be an empty string if valid.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># first check that the total skylight area isn&#39;t larger than the roof</span>
+        <span class="n">total_area</span> <span class="o">=</span> <span class="n">face</span><span class="o">.</span><span class="n">area</span>
+        <span class="n">win_area</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">area_from_face</span><span class="p">(</span><span class="n">face</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">win_area</span> <span class="o">&gt;=</span> <span class="n">total_area</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;Total area of skylights [</span><span class="si">{}</span><span class="s1">] is greater than the area of the &#39;</span> \
+                <span class="s1">&#39;parent roof [</span><span class="si">{}</span><span class="s1">].&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">win_area</span><span class="p">,</span> <span class="n">total_area</span><span class="p">)</span>
+        <span class="c1"># next, check to be sure that no skylight is out of the roof boundary</span>
+        <span class="n">msg_template</span> <span class="o">=</span> <span class="s1">&#39;Skylight polygon </span><span class="si">{}</span><span class="s1"> is outside the range allowed &#39;</span> \
+            <span class="s1">&#39;by the parent roof.&#39;</span>
+        <span class="n">verts2d</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">Point2D</span><span class="p">(</span><span class="n">pt</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">pt</span><span class="o">.</span><span class="n">y</span><span class="p">)</span> <span class="k">for</span> <span class="n">pt</span> <span class="ow">in</span> <span class="n">face</span><span class="o">.</span><span class="n">boundary</span><span class="p">)</span>
+        <span class="n">parent_poly</span><span class="p">,</span> <span class="n">parent_holes</span> <span class="o">=</span> <span class="n">Polygon2D</span><span class="p">(</span><span class="n">verts2d</span><span class="p">),</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">face</span><span class="o">.</span><span class="n">has_holes</span><span class="p">:</span>
+            <span class="n">parent_holes</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span>
+                <span class="nb">tuple</span><span class="p">(</span><span class="n">Point2D</span><span class="p">(</span><span class="n">pt</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">pt</span><span class="o">.</span><span class="n">y</span><span class="p">)</span> <span class="k">for</span> <span class="n">pt</span> <span class="ow">in</span> <span class="n">hole</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">hole</span> <span class="ow">in</span> <span class="n">face</span><span class="o">.</span><span class="n">holes</span>
+            <span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">p_gon</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">polygons</span><span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_sub_polygon</span><span class="p">(</span><span class="n">p_gon</span><span class="p">,</span> <span class="n">parent_poly</span><span class="p">,</span> <span class="n">parent_holes</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">msg_template</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s1">&#39;&#39;</span></div>
+
+<div class="viewcode-block" id="DetailedSkylights.add_skylight_to_face"><a class="viewcode-back" href="../../dragonfly.skylightparameter.html#dragonfly.skylightparameter.DetailedSkylights.add_skylight_to_face">[docs]</a>    <span class="k">def</span> <span class="nf">add_skylight_to_face</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">face</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="mf">0.01</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add Apertures to a Honeybee Roof Face using these Skylight Parameters.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            face: A honeybee-core Face object.</span>
+<span class="sd">            tolerance: The maximum difference between point values for them to be</span>
+<span class="sd">                considered distinct. (Default: 0.01, suitable for objects in meters).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># get the polygons that represent the roof face</span>
+        <span class="n">verts2d</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">Point2D</span><span class="p">(</span><span class="n">pt</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">pt</span><span class="o">.</span><span class="n">y</span><span class="p">)</span> <span class="k">for</span> <span class="n">pt</span> <span class="ow">in</span> <span class="n">face</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">boundary</span><span class="p">)</span>
+        <span class="n">parent_poly</span><span class="p">,</span> <span class="n">parent_holes</span> <span class="o">=</span> <span class="n">Polygon2D</span><span class="p">(</span><span class="n">verts2d</span><span class="p">),</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">face</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">has_holes</span><span class="p">:</span>
+            <span class="n">parent_holes</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span>
+                <span class="nb">tuple</span><span class="p">(</span><span class="n">Point2D</span><span class="p">(</span><span class="n">pt</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">pt</span><span class="o">.</span><span class="n">y</span><span class="p">)</span> <span class="k">for</span> <span class="n">pt</span> <span class="ow">in</span> <span class="n">hole</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">hole</span> <span class="ow">in</span> <span class="n">face</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">holes</span>
+            <span class="p">)</span>
+        <span class="c1"># loop through each polygon and create its geometry</span>
+        <span class="n">p_dir</span> <span class="o">=</span> <span class="n">Vector3D</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">polygon</span><span class="p">,</span> <span class="n">isd</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">polygons</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">are_doors</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_sub_polygon</span><span class="p">(</span><span class="n">polygon</span><span class="p">,</span> <span class="n">parent_poly</span><span class="p">,</span> <span class="n">parent_holes</span><span class="p">):</span>
+                <span class="k">continue</span>
+            <span class="n">pt3d</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span>
+                <span class="n">face</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">plane</span><span class="o">.</span><span class="n">project_point</span><span class="p">(</span><span class="n">Point3D</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">p_dir</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">polygon</span><span class="p">)</span>
+            <span class="n">s_geo</span> <span class="o">=</span> <span class="n">Face3D</span><span class="p">(</span><span class="n">pt3d</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">isd</span><span class="p">:</span>
+                <span class="n">sub_f</span> <span class="o">=</span> <span class="n">Door</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">_Door</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">face</span><span class="o">.</span><span class="n">identifier</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">s_geo</span><span class="p">)</span>
+                <span class="n">face</span><span class="o">.</span><span class="n">add_door</span><span class="p">(</span><span class="n">sub_f</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">sub_f</span> <span class="o">=</span> <span class="n">Aperture</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">_Glz</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">face</span><span class="o">.</span><span class="n">identifier</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">s_geo</span><span class="p">)</span>
+                <span class="n">face</span><span class="o">.</span><span class="n">add_aperture</span><span class="p">(</span><span class="n">sub_f</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="DetailedSkylights.move"><a class="viewcode-back" href="../../dragonfly.skylightparameter.html#dragonfly.skylightparameter.DetailedSkylights.move">[docs]</a>    <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">moving_vec</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get this DetailedSkylights moved along a vector.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            moving_vec: A Vector3D with the direction and distance to move the polygon.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">vec2</span> <span class="o">=</span> <span class="n">Vector2D</span><span class="p">(</span><span class="n">moving_vec</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">moving_vec</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">DetailedSkylights</span><span class="p">(</span>
+            <span class="nb">tuple</span><span class="p">(</span><span class="n">polygon</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">vec2</span><span class="p">)</span> <span class="k">for</span> <span class="n">polygon</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">polygons</span><span class="p">),</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">are_doors</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="DetailedSkylights.scale"><a class="viewcode-back" href="../../dragonfly.skylightparameter.html#dragonfly.skylightparameter.DetailedSkylights.scale">[docs]</a>    <span class="k">def</span> <span class="nf">scale</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">factor</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a scaled version of these DetailedSkylights.</span>
+
+<span class="sd">        This method is called within the scale methods of the Room2D.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            factor: A number representing how much the object should be scaled.</span>
+<span class="sd">            origin: A ladybug_geometry Point3D representing the origin from which</span>
+<span class="sd">                to scale. If None, it will be scaled from the World origin (0, 0, 0).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ori</span> <span class="o">=</span> <span class="n">Point2D</span><span class="p">(</span><span class="n">origin</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">origin</span><span class="o">.</span><span class="n">y</span><span class="p">)</span> <span class="k">if</span> <span class="n">origin</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="n">DetailedSkylights</span><span class="p">(</span>
+            <span class="nb">tuple</span><span class="p">(</span><span class="n">polygon</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="n">factor</span><span class="p">,</span> <span class="n">ori</span><span class="p">)</span> <span class="k">for</span> <span class="n">polygon</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">polygons</span><span class="p">),</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">are_doors</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="DetailedSkylights.rotate"><a class="viewcode-back" href="../../dragonfly.skylightparameter.html#dragonfly.skylightparameter.DetailedSkylights.rotate">[docs]</a>    <span class="k">def</span> <span class="nf">rotate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> <span class="n">origin</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get these DetailedSkylights rotated counterclockwise in the XY plane.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            angle: An angle in degrees.</span>
+<span class="sd">            origin: A ladybug_geometry Point3D for the origin around which the</span>
+<span class="sd">                object will be rotated.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ori</span><span class="p">,</span> <span class="n">ang</span> <span class="o">=</span> <span class="n">Point2D</span><span class="p">(</span><span class="n">origin</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">origin</span><span class="o">.</span><span class="n">y</span><span class="p">),</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">DetailedSkylights</span><span class="p">(</span>
+            <span class="nb">tuple</span><span class="p">(</span><span class="n">polygon</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">ang</span><span class="p">,</span> <span class="n">ori</span><span class="p">)</span> <span class="k">for</span> <span class="n">polygon</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">polygons</span><span class="p">),</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">are_doors</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="DetailedSkylights.reflect"><a class="viewcode-back" href="../../dragonfly.skylightparameter.html#dragonfly.skylightparameter.DetailedSkylights.reflect">[docs]</a>    <span class="k">def</span> <span class="nf">reflect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plane</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a reflected version of these DetailedSkylights across a plane.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            plane: A ladybug_geometry Plane across which the object will be reflected.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># get the plane normal and origin in 2D space</span>
+        <span class="n">normal</span> <span class="o">=</span> <span class="n">Vector2D</span><span class="p">(</span><span class="n">plane</span><span class="o">.</span><span class="n">n</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">plane</span><span class="o">.</span><span class="n">n</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+        <span class="n">origin</span> <span class="o">=</span> <span class="n">Point2D</span><span class="p">(</span><span class="n">plane</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">plane</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+        <span class="c1"># loop through the polygons and reflect them across the plane</span>
+        <span class="n">new_polygons</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">polygon</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">polygons</span><span class="p">:</span>
+            <span class="n">new_verts</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">pt</span><span class="o">.</span><span class="n">reflect</span><span class="p">(</span><span class="n">normal</span><span class="p">,</span> <span class="n">origin</span><span class="p">)</span> <span class="k">for</span> <span class="n">pt</span> <span class="ow">in</span> <span class="n">polygon</span><span class="o">.</span><span class="n">vertices</span><span class="p">)</span>
+            <span class="n">new_polygons</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Polygon2D</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">new_verts</span><span class="p">))))</span>
+        <span class="k">return</span> <span class="n">DetailedSkylights</span><span class="p">(</span><span class="n">new_polygons</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">are_doors</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="DetailedSkylights.from_dict"><a class="viewcode-back" href="../../dragonfly.skylightparameter.html#dragonfly.skylightparameter.DetailedSkylights.from_dict">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_dict</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create DetailedSkylights from a dictionary.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            data: A dictionary in the format below.</span>
+
+<span class="sd">        .. code-block:: python</span>
+
+<span class="sd">            {</span>
+<span class="sd">            &quot;type&quot;: &quot;DetailedSkylights&quot;,</span>
+<span class="sd">            &quot;polygons&quot;: [((0.5, 0.5), (2, 0.5), (2, 2), (0.5, 2)),</span>
+<span class="sd">                         ((3, 1), (4, 1), (4, 2))],</span>
+<span class="sd">            &quot;are_doors&quot;: [False]</span>
+<span class="sd">            }</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">assert</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;DetailedSkylights&#39;</span><span class="p">,</span> \
+            <span class="s1">&#39;Expected DetailedSkylights dictionary. Got </span><span class="si">{}</span><span class="s1">.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">])</span>
+        <span class="n">are_doors</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;are_doors&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="s1">&#39;are_doors&#39;</span> <span class="ow">in</span> <span class="n">data</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+            <span class="nb">tuple</span><span class="p">(</span><span class="n">Polygon2D</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">Point2D</span><span class="o">.</span><span class="n">from_array</span><span class="p">(</span><span class="n">pt</span><span class="p">)</span> <span class="k">for</span> <span class="n">pt</span> <span class="ow">in</span> <span class="n">poly</span><span class="p">))</span>
+                  <span class="k">for</span> <span class="n">poly</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;polygons&#39;</span><span class="p">]),</span>
+            <span class="n">are_doors</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="DetailedSkylights.to_dict"><a class="viewcode-back" href="../../dragonfly.skylightparameter.html#dragonfly.skylightparameter.DetailedSkylights.to_dict">[docs]</a>    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get DetailedSkylights as a dictionary.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;DetailedSkylights&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;polygons&#39;</span><span class="p">:</span> <span class="p">[[</span><span class="n">pt</span><span class="o">.</span><span class="n">to_array</span><span class="p">()</span> <span class="k">for</span> <span class="n">pt</span> <span class="ow">in</span> <span class="n">poly</span><span class="p">]</span> <span class="k">for</span> <span class="n">poly</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">polygons</span><span class="p">],</span>
+            <span class="s1">&#39;are_doors&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">are_doors</span>
+        <span class="p">}</span></div>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_is_sub_polygon</span><span class="p">(</span><span class="n">sub_poly</span><span class="p">,</span> <span class="n">parent_poly</span><span class="p">,</span> <span class="n">parent_holes</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if a sub-polygon is valid for a given assumed parent polygon.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            sub_poly: A sub-Polygon2D for which sub-face equivalency will be tested.</span>
+<span class="sd">            parent_poly: A parent Polygon2D.</span>
+<span class="sd">            parent_holes: An optional list of Polygon2D for any holes that may</span>
+<span class="sd">                exist in the parent polygon. (Default: None).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">parent_holes</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">parent_poly</span><span class="o">.</span><span class="n">is_polygon_inside</span><span class="p">(</span><span class="n">sub_poly</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">parent_poly</span><span class="o">.</span><span class="n">is_polygon_inside</span><span class="p">(</span><span class="n">sub_poly</span><span class="p">):</span>
+                <span class="k">return</span> <span class="kc">False</span>
+            <span class="k">for</span> <span class="n">hole_poly</span> <span class="ow">in</span> <span class="n">parent_holes</span><span class="p">:</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">hole_poly</span><span class="o">.</span><span class="n">is_polygon_outside</span><span class="p">(</span><span class="n">sub_poly</span><span class="p">):</span>
+                    <span class="k">return</span> <span class="kc">False</span>
+            <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="k">def</span> <span class="nf">__copy__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">DetailedSkylights</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_polygons</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_are_doors</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;A tuple based on the object properties, useful for hashing.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">hash</span><span class="p">(</span><span class="n">polygon</span><span class="p">)</span> <span class="k">for</span> <span class="n">polygon</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_polygons</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">are_doors</span>
+
+    <span class="k">def</span> <span class="fm">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">hash</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__key</span><span class="p">())</span>
+
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">DetailedSkylights</span><span class="p">)</span> <span class="ow">and</span> \
+            <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_polygons</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">_polygons</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__eq__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;DetailedSkylights: [</span><span class="si">{}</span><span class="s1"> windows]&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_polygons</span><span class="p">))</span></div>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2023, Ladybug Tools.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

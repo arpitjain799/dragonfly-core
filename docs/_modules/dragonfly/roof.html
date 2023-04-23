@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dragonfly.roof &#8212; dragonfly-core  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          dragonfly-core</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../cli/index.html">CLI Docs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cli/index.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cli/index.html#commands">Commands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../cli/translate.html">translate</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../cli/translate.html#dragonfly-translate">dragonfly translate</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../cli/translate.html#dragonfly-translate-merge-models-to-honeybee">merge-models-to-honeybee</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../cli/translate.html#dragonfly-translate-model-from-geojson">model-from-geojson</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../cli/translate.html#dragonfly-translate-model-to-honeybee">model-to-honeybee</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../cli/translate.html#dragonfly-translate-model-to-honeybee-file">model-to-honeybee-file</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../cli/edit.html">edit</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../cli/edit.html#dragonfly-edit">dragonfly edit</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../cli/edit.html#dragonfly-edit-align">align</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../cli/edit.html#dragonfly-edit-convert-units">convert-units</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../cli/edit.html#dragonfly-edit-remove-short-segments">remove-short-segments</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../cli/edit.html#dragonfly-edit-reset-room-boundaries">reset-room-boundaries</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../cli/edit.html#dragonfly-edit-solve-adjacency">solve-adjacency</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../cli/edit.html#dragonfly-edit-windows-by-ratio">windows-by-ratio</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../cli/create.html">create</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../cli/create.html#dragonfly-create">dragonfly create</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../cli/create.html#dragonfly-create-merge-models">merge-models</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../cli/validate.html">validate</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../cli/validate.html#dragonfly-validate">dragonfly validate</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../cli/validate.html#dragonfly-validate-model">model</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">dragonfly</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../dragonfly.html">dragonfly package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../dragonfly.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../dragonfly.cli.html">dragonfly.cli package</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../dragonfly.cli.html#submodules">Submodules</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../dragonfly.cli.create.html">dragonfly.cli.create module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../dragonfly.cli.edit.html">dragonfly.cli.edit module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../dragonfly.cli.translate.html">dragonfly.cli.translate module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../dragonfly.cli.validate.html">dragonfly.cli.validate module</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../dragonfly.cli.html#module-dragonfly.cli">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../dragonfly.writer.html">dragonfly.writer package</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../dragonfly.writer.html#submodules">Submodules</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../dragonfly.writer.building.html">dragonfly.writer.building module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../dragonfly.writer.context.html">dragonfly.writer.context module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../dragonfly.writer.model.html">dragonfly.writer.model module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../dragonfly.writer.room2d.html">dragonfly.writer.room2d module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../dragonfly.writer.story.html">dragonfly.writer.story module</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../dragonfly.writer.html#module-dragonfly.writer">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../dragonfly.html#submodules">Submodules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../dragonfly.building.html">dragonfly.building module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dragonfly.colorobj.html">dragonfly.colorobj module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dragonfly.config.html">dragonfly.config module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dragonfly.context.html">dragonfly.context module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dragonfly.dictutil.html">dragonfly.dictutil module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dragonfly.extensionutil.html">dragonfly.extensionutil module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dragonfly.model.html">dragonfly.model module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dragonfly.projection.html">dragonfly.projection module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dragonfly.properties.html">dragonfly.properties module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dragonfly.roof.html">dragonfly.roof module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dragonfly.room2d.html">dragonfly.room2d module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dragonfly.shadingparameter.html">dragonfly.shadingparameter module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dragonfly.skylightparameter.html">dragonfly.skylightparameter module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dragonfly.story.html">dragonfly.story module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dragonfly.subdivide.html">dragonfly.subdivide module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dragonfly.windowparameter.html">dragonfly.windowparameter module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../dragonfly.html#module-dragonfly">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../cli/index.html">CLI Docs</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">dragonfly</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+              <li class="hidden-sm"></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-4">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../cli/index.html">CLI Docs</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">dragonfly</a></li>
+</ul>
+
+        </div>
+      </div>
+    <div class="body col-md-8 content" role="main">
+      
+  <h1>Source code for dragonfly.roof</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+<span class="sd">&quot;&quot;&quot;Roof specification with instructions for generating sloped roofs over a Story.&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span>
+<span class="kn">import</span> <span class="nn">math</span>
+
+<span class="kn">from</span> <span class="nn">ladybug_geometry.geometry2d</span> <span class="kn">import</span> <span class="n">Vector2D</span><span class="p">,</span> <span class="n">Point2D</span><span class="p">,</span> <span class="n">Ray2D</span><span class="p">,</span> <span class="n">LineSegment2D</span><span class="p">,</span> \
+    <span class="n">Polygon2D</span>
+<span class="kn">from</span> <span class="nn">ladybug_geometry.geometry3d</span> <span class="kn">import</span> <span class="n">Vector3D</span><span class="p">,</span> <span class="n">Point3D</span><span class="p">,</span> <span class="n">Face3D</span><span class="p">,</span> <span class="n">Polyface3D</span>
+<span class="kn">from</span> <span class="nn">ladybug_geometry.intersection2d</span> <span class="kn">import</span> <span class="n">closest_point2d_on_line2d</span><span class="p">,</span> \
+    <span class="n">closest_point2d_on_line2d_infinite</span>
+
+
+<div class="viewcode-block" id="RoofSpecification"><a class="viewcode-back" href="../../dragonfly.roof.html#dragonfly.roof.RoofSpecification">[docs]</a><span class="k">class</span> <span class="nc">RoofSpecification</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A roof specification with instructions for generating sloped roofs over a Story.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        geometry: An array of Face3D objects representing the geometry of the Roof.</span>
+<span class="sd">            None of these geometries should overlap in plan and, together, these</span>
+<span class="sd">            Face3D should either completely cover or skip each Room2D of the Story</span>
+<span class="sd">            to which the RoofSpecification is assigned.</span>
+
+<span class="sd">    Properties:</span>
+<span class="sd">        * geometry</span>
+<span class="sd">        * boundary_geometry_2d</span>
+<span class="sd">        * planes</span>
+<span class="sd">        * parent</span>
+<span class="sd">        * has_parent</span>
+<span class="sd">        * min</span>
+<span class="sd">        * max</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_geometry&#39;</span><span class="p">,</span> <span class="s1">&#39;_parent&#39;</span><span class="p">,</span> <span class="s1">&#39;_ridge_line_info&#39;</span><span class="p">,</span> <span class="s1">&#39;_ridge_line_tolerance&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">geometry</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize RoofSpecification.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">geometry</span> <span class="o">=</span> <span class="n">geometry</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_parent</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># will be set when RoofSpecification is added to a Story</span>
+
+<div class="viewcode-block" id="RoofSpecification.from_dict"><a class="viewcode-back" href="../../dragonfly.roof.html#dragonfly.roof.RoofSpecification.from_dict">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_dict</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize an RoofSpecification from a dictionary.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            data: A dictionary representation of an RoofSpecification object.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># check the type of dictionary</span>
+        <span class="k">assert</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;RoofSpecification&#39;</span><span class="p">,</span> <span class="s1">&#39;Expected RoofSpecification &#39;</span> \
+            <span class="s1">&#39;dictionary. Got </span><span class="si">{}</span><span class="s1">.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">])</span>
+        <span class="n">geometry</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">Face3D</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">shd_geo</span><span class="p">)</span> <span class="k">for</span> <span class="n">shd_geo</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">])</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">geometry</span><span class="p">)</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">geometry</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get or set a tuple of Face3D objects representing the geometry of the Roof.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_geometry</span>
+
+    <span class="nd">@geometry</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">geometry</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;RoofSpecification must have at least one Face3D.&#39;</span>
+        <span class="k">for</span> <span class="n">geo</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">geo</span><span class="p">,</span> <span class="n">Face3D</span><span class="p">),</span> \
+                <span class="s1">&#39;Expected Face3D for RoofSpecification. Got </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">geo</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_geometry</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ridge_line_info</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ridge_line_tolerance</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">boundary_geometry_2d</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a tuple of Polygon2D for the boundaries around each Face3D in geometry.</span>
+
+<span class="sd">        These Polygons will be in the World XY coordinate system instead of the</span>
+<span class="sd">        coordinate system of the Face3D&#39;s plane.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span>
+            <span class="n">Polygon2D</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">Point2D</span><span class="p">(</span><span class="n">pt</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">pt</span><span class="o">.</span><span class="n">y</span><span class="p">)</span> <span class="k">for</span> <span class="n">pt</span> <span class="ow">in</span> <span class="n">geo</span><span class="o">.</span><span class="n">boundary</span><span class="p">))</span>
+            <span class="k">for</span> <span class="n">geo</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_geometry</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">planes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a tuple of Planes for each Face3D in geometry.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">geo</span><span class="o">.</span><span class="n">plane</span> <span class="k">for</span> <span class="n">geo</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_geometry</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">parent</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Parent Story if assigned. None if not assigned.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parent</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">has_parent</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Boolean noting whether this RoofSpecification has a parent Story.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parent</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">min</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a Point2D for the min bounding rectangle vertex in the XY plane.</span>
+
+<span class="sd">        This is useful in calculations to determine if this RoofSpecification is in</span>
+<span class="sd">        proximity to other objects.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calculate_min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_geometry</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">max</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a Point2D for the max bounding rectangle vertex in the XY plane.</span>
+
+<span class="sd">        This is useful in calculations to determine if this RoofSpecification is in</span>
+<span class="sd">        proximity to other objects.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calculate_max</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_geometry</span><span class="p">)</span>
+
+<div class="viewcode-block" id="RoofSpecification.overlap_count"><a class="viewcode-back" href="../../dragonfly.roof.html#dragonfly.roof.RoofSpecification.overlap_count">[docs]</a>    <span class="k">def</span> <span class="nf">overlap_count</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="mf">0.01</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the number of times that the Roof geometries overlap with one another.</span>
+
+<span class="sd">        This should be zero for the RoofSpecification to be valid.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            tolerance: The minimum distance that two Roof geometries can overlap</span>
+<span class="sd">                with one another and still be considered valid. Default: 0.01,</span>
+<span class="sd">                suitable for objects in meters.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            An integer for the number of times that the roof geometries overlap</span>
+<span class="sd">            with one another beyond the tolerance.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">geo_2d</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">boundary_geometry_2d</span>
+        <span class="n">overlap_count</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">poly_1</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">geo_2d</span><span class="p">):</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">poly_2</span> <span class="ow">in</span> <span class="n">geo_2d</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]:</span>
+                    <span class="k">if</span> <span class="n">Polygon2D</span><span class="o">.</span><span class="n">overlapping_bounding_rect</span><span class="p">(</span><span class="n">poly_1</span><span class="p">,</span> <span class="n">poly_2</span><span class="p">,</span> <span class="n">tolerance</span><span class="p">):</span>
+                        <span class="k">if</span> <span class="n">poly_1</span><span class="o">.</span><span class="n">polygon_relationship</span><span class="p">(</span><span class="n">poly_2</span><span class="p">,</span> <span class="n">tolerance</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+                            <span class="n">overlap_count</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+                <span class="k">pass</span>  <span class="c1"># we have reached the end of the list</span>
+        <span class="k">return</span> <span class="n">overlap_count</span></div>
+
+<div class="viewcode-block" id="RoofSpecification.move"><a class="viewcode-back" href="../../dragonfly.roof.html#dragonfly.roof.RoofSpecification.move">[docs]</a>    <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">moving_vec</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Move this RoofSpecification along a vector.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            moving_vec: A ladybug_geometry Vector3D with the direction and distance</span>
+<span class="sd">                to move the object.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_geometry</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">geo</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">moving_vec</span><span class="p">)</span> <span class="k">for</span> <span class="n">geo</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_geometry</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="RoofSpecification.rotate_xy"><a class="viewcode-back" href="../../dragonfly.roof.html#dragonfly.roof.RoofSpecification.rotate_xy">[docs]</a>    <span class="k">def</span> <span class="nf">rotate_xy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> <span class="n">origin</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Rotate RoofSpecification counterclockwise in the XY plane by a certain angle.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            angle: An angle in degrees.</span>
+<span class="sd">            origin: A ladybug_geometry Point3D for the origin around which the</span>
+<span class="sd">                object will be rotated.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_geometry</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">geo</span><span class="o">.</span><span class="n">rotate_xy</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">angle</span><span class="p">),</span> <span class="n">origin</span><span class="p">)</span>
+                               <span class="k">for</span> <span class="n">geo</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_geometry</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="RoofSpecification.reflect"><a class="viewcode-back" href="../../dragonfly.roof.html#dragonfly.roof.RoofSpecification.reflect">[docs]</a>    <span class="k">def</span> <span class="nf">reflect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plane</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Reflect this RoofSpecification across a plane.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            plane: A ladybug_geometry Plane across which the object will be reflected.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_geometry</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">geo</span><span class="o">.</span><span class="n">reflect</span><span class="p">(</span><span class="n">plane</span><span class="o">.</span><span class="n">n</span><span class="p">,</span> <span class="n">plane</span><span class="o">.</span><span class="n">o</span><span class="p">)</span> <span class="k">for</span> <span class="n">geo</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_geometry</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="RoofSpecification.scale"><a class="viewcode-back" href="../../dragonfly.roof.html#dragonfly.roof.RoofSpecification.scale">[docs]</a>    <span class="k">def</span> <span class="nf">scale</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">factor</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Scale this RoofSpecification by a factor from an origin point.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            factor: A number representing how much the object should be scaled.</span>
+<span class="sd">            origin: A ladybug_geometry Point3D representing the origin from which</span>
+<span class="sd">                to scale. If None, it will be scaled from the World origin (0, 0, 0).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_geometry</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">geo</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="n">factor</span><span class="p">,</span> <span class="n">origin</span><span class="p">)</span> <span class="k">for</span> <span class="n">geo</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_geometry</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="RoofSpecification.align"><a class="viewcode-back" href="../../dragonfly.roof.html#dragonfly.roof.RoofSpecification.align">[docs]</a>    <span class="k">def</span> <span class="nf">align</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">line_ray</span><span class="p">,</span> <span class="n">distance</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="mf">0.01</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Move naked roof vertices within a given distance of a line to be on that line.</span>
+
+<span class="sd">        This is useful for coordinating the Roof specification with the alignment</span>
+<span class="sd">        of Room2Ds that belong to the same Story as this Roof.</span>
+
+<span class="sd">        Note that the planes of the input roof Face3Ds will be preserved. This way,</span>
+<span class="sd">        the internal structure of the roof geometry will be conserved but the roof will</span>
+<span class="sd">        be extended to cover Room2Ds that might have otherwise been aligned to</span>
+<span class="sd">        the point that they have no Roof geometry above them.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            line_ray: A ladybug_geometry Ray2D or LineSegment2D to which the roof</span>
+<span class="sd">                vertices will be aligned. Ray2Ds will be interpreted as being infinite</span>
+<span class="sd">                in both directions while LineSegment2Ds will be interpreted as only</span>
+<span class="sd">                existing between two points.</span>
+<span class="sd">            distance: The maximum distance between a vertex and the line_ray where</span>
+<span class="sd">                the vertex will be moved to lie on the line_ray. Vertices beyond</span>
+<span class="sd">                this distance will be left as they are.</span>
+<span class="sd">            tolerance: The minimum distance between vertices below which they are</span>
+<span class="sd">                considered co-located. This is used to ensure that the alignment process</span>
+<span class="sd">                does not create new overlaps in the roof geometry. (Default: 0.01,</span>
+<span class="sd">                suitable for objects in meters).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># check the input line_ray</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">line_ray</span><span class="p">,</span> <span class="n">Ray2D</span><span class="p">):</span>
+            <span class="n">closest_func</span> <span class="o">=</span> <span class="n">closest_point2d_on_line2d_infinite</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">line_ray</span><span class="p">,</span> <span class="n">LineSegment2D</span><span class="p">):</span>
+            <span class="n">closest_func</span> <span class="o">=</span> <span class="n">closest_point2d_on_line2d</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;Expected Ray2D or LineSegment2D. Got </span><span class="si">{}</span><span class="s1">.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">line_ray</span><span class="p">))</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+        
+        <span class="c1"># get the polygons and intersect them for matching segments</span>
+        <span class="n">polygons</span><span class="p">,</span> <span class="n">planes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">boundary_geometry_2d</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">planes</span>
+        <span class="n">poly_ridge_info</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compute_ridge_line_info</span><span class="p">(</span><span class="n">tolerance</span><span class="p">)</span>
+
+        <span class="c1"># loop through the polygons and align the vertices</span>
+        <span class="n">new_polygons</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">poly</span><span class="p">,</span> <span class="n">poly_info</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">polygons</span><span class="p">,</span> <span class="n">poly_ridge_info</span><span class="p">):</span>
+            <span class="n">new_poly</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">pt</span><span class="p">,</span> <span class="n">pt_info</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">poly</span><span class="p">,</span> <span class="n">poly_info</span><span class="p">):</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">pt_info</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># not on a ridge line; move it anywhere</span>
+                    <span class="n">close_pt</span> <span class="o">=</span> <span class="n">closest_func</span><span class="p">(</span><span class="n">pt</span><span class="p">,</span> <span class="n">line_ray</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">pt</span><span class="o">.</span><span class="n">distance_to_point</span><span class="p">(</span><span class="n">close_pt</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">distance</span><span class="p">:</span>
+                        <span class="n">new_poly</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">close_pt</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">new_poly</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pt</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">pt_info</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>  <span class="c1"># only move it along a singe ridge line</span>
+                    <span class="n">r_line</span> <span class="o">=</span> <span class="n">pt_info</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                    <span class="n">vec_ang</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">r_line</span><span class="o">.</span><span class="n">v</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">line_ray</span><span class="o">.</span><span class="n">v</span><span class="p">))</span>
+                    <span class="k">if</span> <span class="mi">1</span> <span class="o">&lt;=</span> <span class="n">vec_ang</span> <span class="o">&lt;=</span> <span class="mi">179</span><span class="p">:</span>  <span class="c1"># not parallel; ridge will be intact</span>
+                        <span class="n">close_pt</span> <span class="o">=</span> <span class="n">closest_func</span><span class="p">(</span><span class="n">pt</span><span class="p">,</span> <span class="n">line_ray</span><span class="p">)</span>
+                        <span class="k">if</span> <span class="n">pt</span><span class="o">.</span><span class="n">distance_to_point</span><span class="p">(</span><span class="n">close_pt</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">distance</span><span class="p">:</span>
+                            <span class="n">new_poly</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">close_pt</span><span class="p">)</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="n">new_poly</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pt</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">new_poly</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pt</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>  <span class="c1"># multiple ridge lines; don&#39;t move that point!</span>
+                    <span class="n">new_poly</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pt</span><span class="p">)</span>
+            <span class="n">new_polygons</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_poly</span><span class="p">)</span>
+
+        <span class="c1"># project the points back onto the roof</span>
+        <span class="n">proj_dir</span> <span class="o">=</span> <span class="n">Vector3D</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">new_geo</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">poly</span><span class="p">,</span> <span class="n">r_pl</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">new_polygons</span><span class="p">,</span> <span class="n">planes</span><span class="p">):</span>
+            <span class="n">new_pts3d</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">pt2</span> <span class="ow">in</span> <span class="n">poly</span><span class="p">:</span>
+                <span class="n">new_pts3d</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r_pl</span><span class="o">.</span><span class="n">project_point</span><span class="p">(</span><span class="n">Point3D</span><span class="o">.</span><span class="n">from_point2d</span><span class="p">(</span><span class="n">pt2</span><span class="p">),</span> <span class="n">proj_dir</span><span class="p">))</span>
+            <span class="n">new_geo</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Face3D</span><span class="p">(</span><span class="n">new_pts3d</span><span class="p">,</span> <span class="n">plane</span><span class="o">=</span><span class="n">r_pl</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">geometry</span> <span class="o">=</span> <span class="n">new_geo</span></div>
+
+    <span class="k">def</span> <span class="nf">_compute_ridge_line_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tolerance</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a matrix of values for the ridge lines associated with each vertex.</span>
+
+<span class="sd">        Ridge lines are defined as lines shared between two roof geometries.</span>
+
+<span class="sd">        The matrix will have one sub-list for each polygon in the boundary_geometry_2d</span>
+<span class="sd">        and each sub-list will contain a sub-sub-list for each vertex. This sub-sub-list</span>
+<span class="sd">        with contain LineSegment2Ds for each ridge line that the vertex is a part of.</span>
+<span class="sd">        Vertices that belong to only one roof geometry will get an empty list in</span>
+<span class="sd">        the matrix, indicating that the vertex can be moved in any direction without</span>
+<span class="sd">        changing the roof structure. Vertices belonging to two roof geometries will</span>
+<span class="sd">        get a single ridge line LineSegment2D in the list, indicating that the vertex can</span>
+<span class="sd">        be moved along this vector without changing the structure of the whole roof.</span>
+<span class="sd">        Vertices belonging to more than one roof geometry will get multiple</span>
+<span class="sd">        LineSegment2Ds in the list, which usually means that moving the vertex in</span>
+<span class="sd">        any direction will change the Roof structure.</span>
+
+<span class="sd">        This method is hidden because it caches the results, meaning that it does</span>
+<span class="sd">        not need to be recomputed for multiple alignment lines when the roof geometry</span>
+<span class="sd">        or the tolerance does not change.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ridge_line_info</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ridge_line_tolerance</span> <span class="o">!=</span> <span class="n">tolerance</span><span class="p">:</span>
+            <span class="c1"># turn the polygons into Face3D in the XY plane</span>
+            <span class="n">proj_faces</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">poly</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">boundary_geometry_2d</span><span class="p">:</span>
+                <span class="n">proj_face</span> <span class="o">=</span> <span class="n">Face3D</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">Point3D</span><span class="p">(</span><span class="n">pt</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">pt</span><span class="o">.</span><span class="n">y</span><span class="p">)</span> <span class="k">for</span> <span class="n">pt</span> <span class="ow">in</span> <span class="n">poly</span><span class="p">))</span>
+                <span class="n">proj_faces</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">proj_face</span><span class="p">)</span>
+            <span class="c1"># join the projected Face3D into a Polyface3D and get all naked edges</span>
+            <span class="n">roof_p_face</span> <span class="o">=</span> <span class="n">Polyface3D</span><span class="o">.</span><span class="n">from_faces</span><span class="p">(</span><span class="n">proj_faces</span><span class="p">,</span> <span class="n">tolerance</span><span class="p">)</span>
+            <span class="n">roof_p_face</span> <span class="o">=</span> <span class="n">roof_p_face</span><span class="o">.</span><span class="n">merge_overlapping_edges</span><span class="p">(</span>
+                <span class="n">tolerance</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+            <span class="n">internal_ed</span> <span class="o">=</span> <span class="n">roof_p_face</span><span class="o">.</span><span class="n">internal_edges</span>
+            <span class="c1"># check whether each Face3D vertex lies on an internal edge</span>
+            <span class="n">ridge_info</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">proj_face</span> <span class="ow">in</span> <span class="n">proj_faces</span><span class="p">:</span>
+                <span class="n">face_info</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="k">for</span> <span class="n">pt</span> <span class="ow">in</span> <span class="n">proj_face</span><span class="o">.</span><span class="n">boundary</span><span class="p">:</span>
+                    <span class="n">pt_rid</span> <span class="o">=</span> <span class="p">[]</span>
+                    <span class="k">for</span> <span class="n">ed</span> <span class="ow">in</span> <span class="n">internal_ed</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">ed</span><span class="o">.</span><span class="n">distance_to_point</span><span class="p">(</span><span class="n">pt</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">tolerance</span><span class="p">:</span>
+                            <span class="n">ln_2</span> <span class="o">=</span> <span class="n">LineSegment2D</span><span class="p">(</span>
+                                <span class="n">Point2D</span><span class="p">(</span><span class="n">ed</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">ed</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">y</span><span class="p">),</span> <span class="n">Vector2D</span><span class="p">(</span><span class="n">ed</span><span class="o">.</span><span class="n">v</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">ed</span><span class="o">.</span><span class="n">v</span><span class="o">.</span><span class="n">y</span><span class="p">))</span>
+                            <span class="n">pt_rid</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ln_2</span><span class="p">)</span>
+                    <span class="n">face_info</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pt_rid</span><span class="p">)</span>
+                <span class="n">ridge_info</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">face_info</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_ridge_line_info</span> <span class="o">=</span> <span class="n">ridge_info</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_ridge_line_tolerance</span> <span class="o">=</span> <span class="n">tolerance</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ridge_line_info</span>
+
+<div class="viewcode-block" id="RoofSpecification.to_dict"><a class="viewcode-back" href="../../dragonfly.roof.html#dragonfly.roof.RoofSpecification.to_dict">[docs]</a>    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return RoofSpecification as a dictionary.&quot;&quot;&quot;</span>
+        <span class="n">base</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;RoofSpecification&#39;</span><span class="p">}</span>
+        <span class="n">base</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">geo</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span> <span class="k">for</span> <span class="n">geo</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_geometry</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">base</span></div>
+
+<div class="viewcode-block" id="RoofSpecification.duplicate"><a class="viewcode-back" href="../../dragonfly.roof.html#dragonfly.roof.RoofSpecification.duplicate">[docs]</a>    <span class="k">def</span> <span class="nf">duplicate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a copy of this object.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__copy__</span><span class="p">()</span></div>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_calculate_min</span><span class="p">(</span><span class="n">geometry_objects</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Calculate min Point2D around an array of geometry with min attributes.</span>
+
+<span class="sd">        This is used in all functions that calculate bounding rectangles around</span>
+<span class="sd">        dragonfly objects and assess when two objects are in close proximity.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">min_pt</span> <span class="o">=</span> <span class="p">[</span><span class="n">geometry_objects</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">geometry_objects</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="o">.</span><span class="n">y</span><span class="p">]</span>
+
+        <span class="k">for</span> <span class="n">room</span> <span class="ow">in</span> <span class="n">geometry_objects</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+            <span class="k">if</span> <span class="n">room</span><span class="o">.</span><span class="n">min</span><span class="o">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">min_pt</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+                <span class="n">min_pt</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">room</span><span class="o">.</span><span class="n">min</span><span class="o">.</span><span class="n">x</span>
+            <span class="k">if</span> <span class="n">room</span><span class="o">.</span><span class="n">min</span><span class="o">.</span><span class="n">y</span> <span class="o">&lt;</span> <span class="n">min_pt</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+                <span class="n">min_pt</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">room</span><span class="o">.</span><span class="n">min</span><span class="o">.</span><span class="n">y</span>
+
+        <span class="k">return</span> <span class="n">Point2D</span><span class="p">(</span><span class="n">min_pt</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">min_pt</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_calculate_max</span><span class="p">(</span><span class="n">geometry_objects</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Calculate max Point2D around an array of geometry with max attributes.</span>
+
+<span class="sd">        This is used in all functions that calculate bounding rectangles around</span>
+<span class="sd">        dragonfly objects and assess when two objects are in close proximity.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">max_pt</span> <span class="o">=</span> <span class="p">[</span><span class="n">geometry_objects</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">geometry_objects</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="o">.</span><span class="n">y</span><span class="p">]</span>
+
+        <span class="k">for</span> <span class="n">room</span> <span class="ow">in</span> <span class="n">geometry_objects</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+            <span class="k">if</span> <span class="n">room</span><span class="o">.</span><span class="n">max</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">max_pt</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+                <span class="n">max_pt</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">room</span><span class="o">.</span><span class="n">max</span><span class="o">.</span><span class="n">x</span>
+            <span class="k">if</span> <span class="n">room</span><span class="o">.</span><span class="n">max</span><span class="o">.</span><span class="n">y</span> <span class="o">&gt;</span> <span class="n">max_pt</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+                <span class="n">max_pt</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">room</span><span class="o">.</span><span class="n">max</span><span class="o">.</span><span class="n">y</span>
+
+        <span class="k">return</span> <span class="n">Point2D</span><span class="p">(</span><span class="n">max_pt</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">max_pt</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+    <span class="k">def</span> <span class="nf">__copy__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">RoofSpecification</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_geometry</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_geometry</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_geometry</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">iter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_geometry</span><span class="p">)</span>
+
+<div class="viewcode-block" id="RoofSpecification.ToString"><a class="viewcode-back" href="../../dragonfly.roof.html#dragonfly.roof.RoofSpecification.ToString">[docs]</a>    <span class="k">def</span> <span class="nf">ToString</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Overwrite .NET ToString.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span></div>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;RoofSpecification: [</span><span class="si">{}</span><span class="s1"> geometries]&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_geometry</span><span class="p">))</span></div>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2023, Ladybug Tools.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

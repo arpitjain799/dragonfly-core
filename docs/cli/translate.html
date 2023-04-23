@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>translate &#8212; dragonfly-core  documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="edit" href="edit.html" />
+    <link rel="prev" title="CLI Docs" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          dragonfly-core</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">CLI Docs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#installation">Installation</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#commands">Commands</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">translate</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#dragonfly-translate">dragonfly translate</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#dragonfly-translate-merge-models-to-honeybee">merge-models-to-honeybee</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#dragonfly-translate-model-from-geojson">model-from-geojson</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#dragonfly-translate-model-to-honeybee">model-to-honeybee</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#dragonfly-translate-model-to-honeybee-file">model-to-honeybee-file</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="edit.html">edit</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="edit.html#dragonfly-edit">dragonfly edit</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="edit.html#dragonfly-edit-align">align</a></li>
+<li class="toctree-l5"><a class="reference internal" href="edit.html#dragonfly-edit-convert-units">convert-units</a></li>
+<li class="toctree-l5"><a class="reference internal" href="edit.html#dragonfly-edit-remove-short-segments">remove-short-segments</a></li>
+<li class="toctree-l5"><a class="reference internal" href="edit.html#dragonfly-edit-reset-room-boundaries">reset-room-boundaries</a></li>
+<li class="toctree-l5"><a class="reference internal" href="edit.html#dragonfly-edit-solve-adjacency">solve-adjacency</a></li>
+<li class="toctree-l5"><a class="reference internal" href="edit.html#dragonfly-edit-windows-by-ratio">windows-by-ratio</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="create.html">create</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="create.html#dragonfly-create">dragonfly create</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="create.html#dragonfly-create-merge-models">merge-models</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="validate.html">validate</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="validate.html#dragonfly-validate">dragonfly validate</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="validate.html#dragonfly-validate-model">model</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">dragonfly</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dragonfly.html">dragonfly package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../dragonfly.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../dragonfly.cli.html">dragonfly.cli package</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../dragonfly.cli.html#submodules">Submodules</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../dragonfly.cli.create.html">dragonfly.cli.create module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../dragonfly.cli.edit.html">dragonfly.cli.edit module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../dragonfly.cli.translate.html">dragonfly.cli.translate module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../dragonfly.cli.validate.html">dragonfly.cli.validate module</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../dragonfly.cli.html#module-dragonfly.cli">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../dragonfly.writer.html">dragonfly.writer package</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../dragonfly.writer.html#submodules">Submodules</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../dragonfly.writer.building.html">dragonfly.writer.building module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../dragonfly.writer.context.html">dragonfly.writer.context module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../dragonfly.writer.model.html">dragonfly.writer.model module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../dragonfly.writer.room2d.html">dragonfly.writer.room2d module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../dragonfly.writer.story.html">dragonfly.writer.story module</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../dragonfly.writer.html#module-dragonfly.writer">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../dragonfly.html#submodules">Submodules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../dragonfly.building.html">dragonfly.building module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dragonfly.colorobj.html">dragonfly.colorobj module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dragonfly.config.html">dragonfly.config module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dragonfly.context.html">dragonfly.context module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dragonfly.dictutil.html">dragonfly.dictutil module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dragonfly.extensionutil.html">dragonfly.extensionutil module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dragonfly.model.html">dragonfly.model module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dragonfly.projection.html">dragonfly.projection module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dragonfly.properties.html">dragonfly.properties module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dragonfly.roof.html">dragonfly.roof module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dragonfly.room2d.html">dragonfly.room2d module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dragonfly.shadingparameter.html">dragonfly.shadingparameter module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dragonfly.skylightparameter.html">dragonfly.skylightparameter module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dragonfly.story.html">dragonfly.story module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dragonfly.subdivide.html">dragonfly.subdivide module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dragonfly.windowparameter.html">dragonfly.windowparameter module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../dragonfly.html#module-dragonfly">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">CLI Docs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#installation">Installation</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#commands">Commands</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">translate</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#dragonfly-translate">dragonfly translate</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#dragonfly-translate-merge-models-to-honeybee">merge-models-to-honeybee</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#dragonfly-translate-model-from-geojson">model-from-geojson</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#dragonfly-translate-model-to-honeybee">model-to-honeybee</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#dragonfly-translate-model-to-honeybee-file">model-to-honeybee-file</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="edit.html">edit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="create.html">create</a></li>
+<li class="toctree-l3"><a class="reference internal" href="validate.html">validate</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">dragonfly</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="index.html" title="Previous Chapter: CLI Docs"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; CLI Docs</span>
+    </a>
+  </li>
+  <li>
+    <a href="edit.html" title="Next Chapter: edit"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">edit &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../_sources/cli/translate.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-4">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">CLI Docs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#installation">Installation</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#commands">Commands</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">translate</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#dragonfly-translate">dragonfly translate</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#dragonfly-translate-merge-models-to-honeybee">merge-models-to-honeybee</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#dragonfly-translate-model-from-geojson">model-from-geojson</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#dragonfly-translate-model-to-honeybee">model-to-honeybee</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#dragonfly-translate-model-to-honeybee-file">model-to-honeybee-file</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="edit.html">edit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="create.html">create</a></li>
+<li class="toctree-l3"><a class="reference internal" href="validate.html">validate</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">dragonfly</a></li>
+</ul>
+
+        </div>
+      </div>
+    <div class="body col-md-8 content" role="main">
+      
+  <section id="translate">
+<h1>translate<a class="headerlink" href="#translate" title="Permalink to this headline">¶</a></h1>
+<section id="dragonfly-translate">
+<h2>dragonfly translate<a class="headerlink" href="#dragonfly-translate" title="Permalink to this headline">¶</a></h2>
+<p>Commands for translating Dragonfly JSON files to honeybee.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>dragonfly<span class="w"> </span>translate<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>COMMAND<span class="w"> </span><span class="o">[</span>ARGS<span class="o">]</span>...
+</pre></div>
+</div>
+<section id="dragonfly-translate-merge-models-to-honeybee">
+<h3>merge-models-to-honeybee<a class="headerlink" href="#dragonfly-translate-merge-models-to-honeybee" title="Permalink to this headline">¶</a></h3>
+<p>Merge multiple Dragonfly and/or Honeybee Models into a single Honeybee Model.</p>
+<div class="line-block">
+<div class="line">Args:</div>
+<div class="line-block">
+<div class="line">base_model: Full path to a Dragonfly Model JSON or Pkl file that serves</div>
+<div class="line-block">
+<div class="line">as the base into which the other model(s) will be merged.</div>
+</div>
+</div>
+</div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>dragonfly<span class="w"> </span>translate<span class="w"> </span>merge-models-to-honeybee<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>BASE_MODEL
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt id="cmdoption-dragonfly-translate-merge-models-to-honeybee-d">
+<span id="cmdoption-dragonfly-translate-merge-models-to-honeybee-dragonfly-model"></span><code class="sig-name descname">-d</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--dragonfly-model</code><code class="sig-prename descclassname"> &lt;dragonfly_model&gt;</code><a class="headerlink" href="#cmdoption-dragonfly-translate-merge-models-to-honeybee-d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Other Dragonfly Model to be merged into the base model.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-dragonfly-translate-merge-models-to-honeybee-h">
+<span id="cmdoption-dragonfly-translate-merge-models-to-honeybee-honeybee-model"></span><code class="sig-name descname">-h</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--honeybee-model</code><code class="sig-prename descclassname"> &lt;honeybee_model&gt;</code><a class="headerlink" href="#cmdoption-dragonfly-translate-merge-models-to-honeybee-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>Other Honeybee Model to be merged into the base model.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-dragonfly-translate-merge-models-to-honeybee-multiplier">
+<span id="cmdoption-dragonfly-translate-merge-models-to-honeybee-fg"></span><span id="cmdoption-dragonfly-translate-merge-models-to-honeybee-full-geometry"></span><code class="sig-name descname">--multiplier</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">-fg</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--full-geometry</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-dragonfly-translate-merge-models-to-honeybee-multiplier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flag to note if the multipliers on each Building story should be passed along to the generated Honeybee Room objects or if full geometry objects should be written for each story in the building.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>True</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-dragonfly-translate-merge-models-to-honeybee-no-plenum">
+<span id="cmdoption-dragonfly-translate-merge-models-to-honeybee-p"></span><span id="cmdoption-dragonfly-translate-merge-models-to-honeybee-plenum"></span><code class="sig-name descname">--no-plenum</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">-p</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--plenum</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-dragonfly-translate-merge-models-to-honeybee-no-plenum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flag to indicate whether ceiling/floor plenums should be auto-generated for the Rooms.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>True</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-dragonfly-translate-merge-models-to-honeybee-no-ceil-adjacency">
+<span id="cmdoption-dragonfly-translate-merge-models-to-honeybee-a"></span><span id="cmdoption-dragonfly-translate-merge-models-to-honeybee-ceil-adjacency"></span><code class="sig-name descname">--no-ceil-adjacency</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">-a</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--ceil-adjacency</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-dragonfly-translate-merge-models-to-honeybee-no-ceil-adjacency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flag to indicate whether adjacencies should be solved between interior stories when Room2D floor and ceiling geometries are coplanar. This ensures that Surface boundary conditions are used instead of Adiabatic ones. Note that this input has no effect when the object-per-model is Story.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>True</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-dragonfly-translate-merge-models-to-honeybee-enforce-adj-check">
+<span id="cmdoption-dragonfly-translate-merge-models-to-honeybee-bc"></span><span id="cmdoption-dragonfly-translate-merge-models-to-honeybee-bypass-adj-check"></span><code class="sig-name descname">--enforce-adj-check</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">-bc</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--bypass-adj-check</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-dragonfly-translate-merge-models-to-honeybee-enforce-adj-check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flag to note whether an exception should be raised if an adjacency between two Room2Ds is invalid or if the check should be bypassed and the invalid Surface boundary condition should be replaced with an Outdoor boundary condition. If bypass is selected, any Walls containing WindowParameters and an illegal boundary condition will also be replaced with an Outdoor boundary condition.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>True</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-dragonfly-translate-merge-models-to-honeybee-f">
+<span id="cmdoption-dragonfly-translate-merge-models-to-honeybee-output-file"></span><code class="sig-name descname">-f</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--output-file</code><code class="sig-prename descclassname"> &lt;output_file&gt;</code><a class="headerlink" href="#cmdoption-dragonfly-translate-merge-models-to-honeybee-f" title="Permalink to this definition">¶</a></dt>
+<dd><p>Optional file to output the Honeybee Model JSON string with solved adjacency. By default it will be printed out to stdout</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt id="cmdoption-dragonfly-translate-merge-models-to-honeybee-arg-BASE_MODEL">
+<span id="cmdoption-dragonfly-translate-merge-models-to-honeybee-arg-base-model"></span><code class="sig-name descname">BASE_MODEL</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-dragonfly-translate-merge-models-to-honeybee-arg-BASE_MODEL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+<section id="dragonfly-translate-model-from-geojson">
+<h3>model-from-geojson<a class="headerlink" href="#dragonfly-translate-model-from-geojson" title="Permalink to this headline">¶</a></h3>
+<p>Create a Dragonfly model from a geojson file with building footprints.</p>
+<div class="line-block">
+<div class="line">Args:</div>
+<div class="line-block">
+<div class="line">geojson: Full path to a geoJSON file with building footprints as Polygons</div>
+<div class="line-block">
+<div class="line">or MultiPolygons.</div>
+</div>
+</div>
+</div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>dragonfly<span class="w"> </span>translate<span class="w"> </span>model-from-geojson<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>GEOJSON
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt id="cmdoption-dragonfly-translate-model-from-geojson-l">
+<span id="cmdoption-dragonfly-translate-model-from-geojson-location"></span><code class="sig-name descname">-l</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--location</code><code class="sig-prename descclassname"> &lt;location&gt;</code><a class="headerlink" href="#cmdoption-dragonfly-translate-model-from-geojson-l" title="Permalink to this definition">¶</a></dt>
+<dd><p>An optional latitude and longitude, formatted as two floats separated by a comma, (eg. “42.3601,-71.0589”), defining the origin of the geojson file. If nothing is passed, the origin is autocalculated as the bottom-left corner of the bounding box of all building footprints in the geojson file.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-dragonfly-translate-model-from-geojson-p">
+<span id="cmdoption-dragonfly-translate-model-from-geojson-point"></span><code class="sig-name descname">-p</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--point</code><code class="sig-prename descclassname"> &lt;point&gt;</code><a class="headerlink" href="#cmdoption-dragonfly-translate-model-from-geojson-p" title="Permalink to this definition">¶</a></dt>
+<dd><p>An optional X and Y coordinate, formatted as two floats separated by a comma, (eg. “200,200”), defining the origin of the geojson file in the space of the dragonfly model. The coordinates of this point are expected to be in the expected units of this Model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>0,0</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-dragonfly-translate-model-from-geojson-wr">
+<span id="cmdoption-dragonfly-translate-model-from-geojson-window-ratio"></span><code class="sig-name descname">-wr</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--window-ratio</code><code class="sig-prename descclassname"> &lt;window_ratio&gt;</code><a class="headerlink" href="#cmdoption-dragonfly-translate-model-from-geojson-wr" title="Permalink to this definition">¶</a></dt>
+<dd><p>A number between 0 and 1 (but not equal to 1) for the ratio between aperture area and wall area to be applied to all walls of all buildings. If specified, this will override the window_ratio key in the geojson</p>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-dragonfly-translate-model-from-geojson-buildings-only">
+<span id="cmdoption-dragonfly-translate-model-from-geojson-all"></span><span id="cmdoption-dragonfly-translate-model-from-geojson-all-to-buildings"></span><code class="sig-name descname">--buildings-only</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">-all</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--all-to-buildings</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-dragonfly-translate-model-from-geojson-buildings-only" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flag to indicate if all geometries in the geojson file should be considered buildings. If buildings-only, this method will only generate footprints from geometries that are defined as a “Building” in the type field of its corresponding properties.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>True</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-dragonfly-translate-model-from-geojson-no-context">
+<span id="cmdoption-dragonfly-translate-model-from-geojson-c"></span><span id="cmdoption-dragonfly-translate-model-from-geojson-existing-to-context"></span><code class="sig-name descname">--no-context</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">-c</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--existing-to-context</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-dragonfly-translate-model-from-geojson-no-context" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flag to indicate whether polygons possessing a building_status of “Existing” under their properties should be imported as ContextShade instead of Building objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>True</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-dragonfly-translate-model-from-geojson-separate-top-bottom">
+<span id="cmdoption-dragonfly-translate-model-from-geojson-ns"></span><span id="cmdoption-dragonfly-translate-model-from-geojson-no-separation"></span><code class="sig-name descname">--separate-top-bottom</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">-ns</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--no-separation</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-dragonfly-translate-model-from-geojson-separate-top-bottom" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flag to indicate whether top/bottom stories of the buildings should not be separated in order to account for different boundary conditions of the roof and ground floor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>True</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-dragonfly-translate-model-from-geojson-u">
+<span id="cmdoption-dragonfly-translate-model-from-geojson-units"></span><code class="sig-name descname">-u</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--units</code><code class="sig-prename descclassname"> &lt;units&gt;</code><a class="headerlink" href="#cmdoption-dragonfly-translate-model-from-geojson-u" title="Permalink to this definition">¶</a></dt>
+<dd><p>Text for the units system in which the model geometry exists. Must be (Meters, Millimeters, Feet, Inches, Centimeters).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>Meters</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-dragonfly-translate-model-from-geojson-t">
+<span id="cmdoption-dragonfly-translate-model-from-geojson-tolerance"></span><code class="sig-name descname">-t</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--tolerance</code><code class="sig-prename descclassname"> &lt;tolerance&gt;</code><a class="headerlink" href="#cmdoption-dragonfly-translate-model-from-geojson-t" title="Permalink to this definition">¶</a></dt>
+<dd><p>The maximum difference between x, y, and z values at which vertices are considered equivalent.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-dragonfly-translate-model-from-geojson-f">
+<span id="cmdoption-dragonfly-translate-model-from-geojson-output-file"></span><code class="sig-name descname">-f</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--output-file</code><code class="sig-prename descclassname"> &lt;output_file&gt;</code><a class="headerlink" href="#cmdoption-dragonfly-translate-model-from-geojson-f" title="Permalink to this definition">¶</a></dt>
+<dd><p>Optional file to output the Model JSON string. By default it will be printed out to stdout</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt id="cmdoption-dragonfly-translate-model-from-geojson-arg-GEOJSON">
+<span id="cmdoption-dragonfly-translate-model-from-geojson-arg-geojson"></span><code class="sig-name descname">GEOJSON</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-dragonfly-translate-model-from-geojson-arg-GEOJSON" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+<section id="dragonfly-translate-model-to-honeybee">
+<h3>model-to-honeybee<a class="headerlink" href="#dragonfly-translate-model-to-honeybee" title="Permalink to this headline">¶</a></h3>
+<p>Translate a Dragonfly Model JSON file into several Honeybee Models.</p>
+<div class="line-block">
+<div class="line">Args:</div>
+<div class="line-block">
+<div class="line">model_json: Path to a Dragonfly Model JSON file.</div>
+</div>
+</div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>dragonfly<span class="w"> </span>translate<span class="w"> </span>model-to-honeybee<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>MODEL_JSON
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt id="cmdoption-dragonfly-translate-model-to-honeybee-o">
+<span id="cmdoption-dragonfly-translate-model-to-honeybee-obj-per-model"></span><code class="sig-name descname">-o</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--obj-per-model</code><code class="sig-prename descclassname"> &lt;obj_per_model&gt;</code><a class="headerlink" href="#cmdoption-dragonfly-translate-model-to-honeybee-o" title="Permalink to this definition">¶</a></dt>
+<dd><p>Text to describe how the input Model should be divided across the output Models. Choose from: District, Building, Story.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>Building</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-dragonfly-translate-model-to-honeybee-multiplier">
+<span id="cmdoption-dragonfly-translate-model-to-honeybee-fg"></span><span id="cmdoption-dragonfly-translate-model-to-honeybee-full-geometry"></span><code class="sig-name descname">--multiplier</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">-fg</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--full-geometry</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-dragonfly-translate-model-to-honeybee-multiplier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flag to note if the multipliers on each Building story should be passed along to the generated Honeybee Room objects or if full geometry objects should be written for each story in the building.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>True</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-dragonfly-translate-model-to-honeybee-no-plenum">
+<span id="cmdoption-dragonfly-translate-model-to-honeybee-p"></span><span id="cmdoption-dragonfly-translate-model-to-honeybee-plenum"></span><code class="sig-name descname">--no-plenum</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">-p</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--plenum</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-dragonfly-translate-model-to-honeybee-no-plenum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flag to indicate whether ceiling/floor plenums should be auto-generated for the Rooms.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>True</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-dragonfly-translate-model-to-honeybee-no-cap">
+<span id="cmdoption-dragonfly-translate-model-to-honeybee-c"></span><span id="cmdoption-dragonfly-translate-model-to-honeybee-cap"></span><code class="sig-name descname">--no-cap</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">-c</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--cap</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-dragonfly-translate-model-to-honeybee-no-cap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flag to indicate whether context shade buildings should be capped with a top face.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>True</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-dragonfly-translate-model-to-honeybee-no-ceil-adjacency">
+<span id="cmdoption-dragonfly-translate-model-to-honeybee-a"></span><span id="cmdoption-dragonfly-translate-model-to-honeybee-ceil-adjacency"></span><code class="sig-name descname">--no-ceil-adjacency</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">-a</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--ceil-adjacency</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-dragonfly-translate-model-to-honeybee-no-ceil-adjacency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flag to indicate whether adjacencies should be solved between interior stories when Room2D floor and ceiling geometries are coplanar. This ensures that Surface boundary conditions are used instead of Adiabatic ones. Note that this input has no effect when the object-per-model is Story.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>True</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-dragonfly-translate-model-to-honeybee-sd">
+<span id="cmdoption-dragonfly-translate-model-to-honeybee-shade-dist"></span><code class="sig-name descname">-sd</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--shade-dist</code><code class="sig-prename descclassname"> &lt;shade_dist&gt;</code><a class="headerlink" href="#cmdoption-dragonfly-translate-model-to-honeybee-sd" title="Permalink to this definition">¶</a></dt>
+<dd><p>An optional number to note the distance beyond which other buildings shade should not be exported into a Model. This can include the units of the distance (eg. 100ft) or, if no units are  provided, the value will be interpreted in the dragonfly model units. If None, all other buildings will be included as context shade in each and every Model. Set to 0 to exclude all neighboring buildings from the resulting models.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-dragonfly-translate-model-to-honeybee-enforce-adj-check">
+<span id="cmdoption-dragonfly-translate-model-to-honeybee-bc"></span><span id="cmdoption-dragonfly-translate-model-to-honeybee-bypass-adj-check"></span><code class="sig-name descname">--enforce-adj-check</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">-bc</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--bypass-adj-check</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-dragonfly-translate-model-to-honeybee-enforce-adj-check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flag to note whether an exception should be raised if an adjacency between two Room2Ds is invalid or if the check should be bypassed and the invalid Surface boundary condition should be replaced with an Outdoor boundary condition. If bypass is selected, any Walls containing WindowParameters and an illegal boundary condition will also be replaced with an Outdoor boundary condition.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>True</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-dragonfly-translate-model-to-honeybee-f">
+<span id="cmdoption-dragonfly-translate-model-to-honeybee-folder"></span><code class="sig-name descname">-f</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--folder</code><code class="sig-prename descclassname"> &lt;folder&gt;</code><a class="headerlink" href="#cmdoption-dragonfly-translate-model-to-honeybee-f" title="Permalink to this definition">¶</a></dt>
+<dd><p>Folder on this computer, into which the HBJSON files will be written. If None, the files will be output to the honeybee default simulation folder and placed in a project folder with the same name as the model json.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-dragonfly-translate-model-to-honeybee-log">
+<span id="cmdoption-dragonfly-translate-model-to-honeybee-log-file"></span><code class="sig-name descname">-log</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--log-file</code><code class="sig-prename descclassname"> &lt;log_file&gt;</code><a class="headerlink" href="#cmdoption-dragonfly-translate-model-to-honeybee-log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Optional log file to output a JSON array of dictionaries with information about each of the generated HBJSONs, including their file paths. By default the list will be printed out to stdout</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><ul class="simple">
+<li></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt id="cmdoption-dragonfly-translate-model-to-honeybee-arg-MODEL_JSON">
+<span id="cmdoption-dragonfly-translate-model-to-honeybee-arg-model-json"></span><code class="sig-name descname">MODEL_JSON</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-dragonfly-translate-model-to-honeybee-arg-MODEL_JSON" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+<section id="dragonfly-translate-model-to-honeybee-file">
+<h3>model-to-honeybee-file<a class="headerlink" href="#dragonfly-translate-model-to-honeybee-file" title="Permalink to this headline">¶</a></h3>
+<p>Translate a Dragonfly Model into a single Honeybee Model.</p>
+<div class="line-block">
+<div class="line">Args:</div>
+<div class="line-block">
+<div class="line">model_file: Full path to a Dragonfly Model JSON or Pkl file.</div>
+</div>
+</div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>dragonfly<span class="w"> </span>translate<span class="w"> </span>model-to-honeybee-file<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>MODEL_FILE
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt id="cmdoption-dragonfly-translate-model-to-honeybee-file-multiplier">
+<span id="cmdoption-dragonfly-translate-model-to-honeybee-file-fg"></span><span id="cmdoption-dragonfly-translate-model-to-honeybee-file-full-geometry"></span><code class="sig-name descname">--multiplier</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">-fg</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--full-geometry</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-dragonfly-translate-model-to-honeybee-file-multiplier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flag to note if the multipliers on each Building story should be passed along to the generated Honeybee Room objects or if full geometry objects should be written for each story in the building.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>True</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-dragonfly-translate-model-to-honeybee-file-no-plenum">
+<span id="cmdoption-dragonfly-translate-model-to-honeybee-file-p"></span><span id="cmdoption-dragonfly-translate-model-to-honeybee-file-plenum"></span><code class="sig-name descname">--no-plenum</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">-p</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--plenum</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-dragonfly-translate-model-to-honeybee-file-no-plenum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flag to indicate whether ceiling/floor plenums should be auto-generated for the Rooms.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>True</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-dragonfly-translate-model-to-honeybee-file-no-ceil-adjacency">
+<span id="cmdoption-dragonfly-translate-model-to-honeybee-file-a"></span><span id="cmdoption-dragonfly-translate-model-to-honeybee-file-ceil-adjacency"></span><code class="sig-name descname">--no-ceil-adjacency</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">-a</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--ceil-adjacency</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-dragonfly-translate-model-to-honeybee-file-no-ceil-adjacency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flag to indicate whether adjacencies should be solved between interior stories when Room2D floor and ceiling geometries are coplanar. This ensures that Surface boundary conditions are used instead of Adiabatic ones. Note that this input has no effect when the object-per-model is Story.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>True</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-dragonfly-translate-model-to-honeybee-file-enforce-adj-check">
+<span id="cmdoption-dragonfly-translate-model-to-honeybee-file-bc"></span><span id="cmdoption-dragonfly-translate-model-to-honeybee-file-bypass-adj-check"></span><code class="sig-name descname">--enforce-adj-check</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">-bc</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--bypass-adj-check</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-dragonfly-translate-model-to-honeybee-file-enforce-adj-check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flag to note whether an exception should be raised if an adjacency between two Room2Ds is invalid or if the check should be bypassed and the invalid Surface boundary condition should be replaced with an Outdoor boundary condition. If bypass is selected, any Walls containing WindowParameters and an illegal boundary condition will also be replaced with an Outdoor boundary condition.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>True</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-dragonfly-translate-model-to-honeybee-file-f">
+<span id="cmdoption-dragonfly-translate-model-to-honeybee-file-output-file"></span><code class="sig-name descname">-f</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--output-file</code><code class="sig-prename descclassname"> &lt;output_file&gt;</code><a class="headerlink" href="#cmdoption-dragonfly-translate-model-to-honeybee-file-f" title="Permalink to this definition">¶</a></dt>
+<dd><p>Optional file to output the Honeybee Model JSON string with solved adjacency. By default it will be printed out to stdout</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt id="cmdoption-dragonfly-translate-model-to-honeybee-file-arg-MODEL_FILE">
+<span id="cmdoption-dragonfly-translate-model-to-honeybee-file-arg-model-file"></span><code class="sig-name descname">MODEL_FILE</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-dragonfly-translate-model-to-honeybee-file-arg-MODEL_FILE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2023, Ladybug Tools.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
